@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Otopark.WebAPI.Core.Application
+namespace Otopark.WebAPI.Core.Application.Interfaces
 {
     public interface IRepository<T> where T : class, new()
     {

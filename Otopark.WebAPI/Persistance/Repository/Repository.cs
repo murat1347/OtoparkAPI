@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Otopark.WebAPI.Core.Application;
+using Otopark.WebAPI.Core.Application.Interfaces;
 using Otopark.WebAPI.Persistance.Context;
 using System.Linq.Expressions;
 
