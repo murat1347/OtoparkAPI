@@ -12,6 +12,7 @@ namespace Otopark.WebAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles ="Admin")]
+
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -25,6 +26,7 @@ namespace Otopark.WebAPI.Controllers
         public async Task<IActionResult> List()
         {
             var result = await _mediator.Send(new GetAllProductsQueryRequest());
+
             return Ok(result);
         }
 
@@ -35,6 +37,7 @@ namespace Otopark.WebAPI.Controllers
 
             return result == null ? NotFound() : Ok(result);
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         { 
@@ -50,11 +53,5 @@ namespace Otopark.WebAPI.Controllers
 
             return Ok(result);
         }
-
-
-
-
-
-
     }
 }
