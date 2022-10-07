@@ -23,6 +23,7 @@ namespace Otopark.WebAPI.Controllers
         public async Task<IActionResult> List()
         {
             var result = await _mediator.Send(new GetCategoriesQueryRequest());
+
             return Ok(result);
         }
 
