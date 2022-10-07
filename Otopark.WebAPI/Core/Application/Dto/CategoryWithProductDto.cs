@@ -2,10 +2,9 @@
 
 namespace Otopark.WebAPI.Core.Application.Dto
 {
-    public class CategoryListDto
+    public class CategoryWithProductDto
     {
         public int Id { get; set; }
-        public String? Defination { get; set; }
-
+        public List<Product>? products { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Otopark.WebAPI.Core.Application.Features.CQRS.Commands;
@@ -7,8 +8,10 @@ using Otopark.WebAPI.Core.Features.CQRS.Queries;
 
 namespace Otopark.WebAPI.Controllers
 {
+    [Microsoft.AspNetCore.Cors.EnableCors]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles ="Admin")]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
