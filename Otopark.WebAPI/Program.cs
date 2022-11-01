@@ -31,7 +31,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<OtoparkJwtContext>(opt =>
     {
-        opt.UseSqlServer(builder.Configuration.GetConnectionString("Local"));
+        opt.UseNpgsql(builder.Configuration.GetConnectionString("Local"));
     }
 );
 builder.Services.AddCors(opt =>
